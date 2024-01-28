@@ -242,7 +242,7 @@ class ViewsTestCase(TestDataMixin, KbashTestCase):
         self.set_global_parameter("sa_is_local", False)
         response = self.ajax_post(url, data)
         self.assertEqual(
-             response["message"], "Your request is being processed...")
+            response["message"], "Your request is being processed...")
         worker.work(burst=True)
         self.msgrcpt.refresh_from_db()
         self.assertEqual(self.msgrcpt.rs, status)
@@ -350,12 +350,12 @@ class ViewsTestCase(TestDataMixin, KbashTestCase):
         data["action"] = "mark_as_spam"
         response = self.ajax_post(url, data)
         self.assertEqual(
-             response["message"], "Your request is being processed...")
+            response["message"], "Your request is being processed...")
 
         data["action"] = "mark_as_ham"
         response = self.ajax_post(url, data)
         self.assertEqual(
-             response["message"], "Your request is being processed...")
+            response["message"], "Your request is being processed...")
 
         data = {
             "action": "delete",
